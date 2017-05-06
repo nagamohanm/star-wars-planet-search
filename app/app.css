@@ -1,0 +1,105 @@
+/* app css stylesheet */
+
+.menu {
+    list-style: none;
+    border-bottom: 0.1em solid black;
+    margin-bottom: 2em;
+    padding: 0 0 0.5em;
+}
+
+.menu:before {
+    content: "[";
+}
+
+.menu:after {
+    content: "]";
+    content: "]";
+}
+
+.menu > li {
+    display: inline;
+}
+
+.menu > li + li:before {
+    content: "|";
+    padding-right: 0.3em;
+}
+
+/* Login Screen Styles */
+.login-screen {
+    min-width: 1024px;
+    min-height: 100%;
+
+    width: 100%;
+    height: auto;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    background-image: url(images/login.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login-panel {
+    margin: 0 auto;
+    width: 35%;
+    top: 40%;
+    left: 32%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 2px;
+    padding: 0;
+}
+
+.login-group {
+    padding: 5px;
+    border-radius: 2px;
+    color: rgba(210, 210, 210, 1) !important;
+}
+
+.login-panel h3 {
+    color: #F3F3F3;
+    text-align: center;
+}
+
+.login-panel .login-btn {
+    text-align: center;
+}
+
+.login-panel input {
+    width: 80%;
+    margin: 0 auto;
+    border-width: 0 0 1px 0;
+    border-color: #ACACAC;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: transparent;
+    color: #ACACAC;
+}
+
+.login-panel input:focus {
+    border-width: 0 0 1px 0;
+    border-color: #ACACAC;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+input.username {
+    background: url("images/user.svg") no-repeat scroll 7px 7px;
+    padding-left: 30px;
+}
+
+input.password {
+    background: url("images/password.svg") no-repeat scroll 7px 7px;
+    padding-left: 30px;
+}
+
+.login-panel button {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 12px 50px;
+}
+

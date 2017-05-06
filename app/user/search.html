@@ -1,0 +1,18 @@
+<div class="container">
+    <input type="text" ng-model="planetName" ng-change="getPlanets()" placeholder="Type Planet Name..." class="form-control">
+    <div ng-if="!planetsFound">
+        <i class="glyphicon glyphicon-remove"></i> No Results
+    </div>
+    <div class="planets" ng-repeat="planet in planets track by $index">
+        <h4>{{planet.name}}</h4>
+
+    </div>
+    <div class="paginations">
+        <button id="login" type="button" class="btn btn-default" ng-click="getMorePlanets('previous')" ng-disabled="previousPage == ''">
+            <span class="btn-text">Prev</span>
+        </button>
+        <button id="login" type="button" class="btn btn-primary" ng-click="getMorePlanets('next')" ng-disabled="nextPage == ''">
+            <span class="btn-text">Next</span>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="login-panel">
+    <h3>Star Wars Planet Search</h3>
+    <div class="login-image" ng-if="username == ''">&nbsp;</div>
+    <div class="login-image-filled" ng-if="username != ''">&nbsp;</div>
+    <div class="login-group">
+        <input type="text" ng-model="username" class="form-control username" ng-enter="authenticateUser()"
+               autofocus placeholder="Username" autocomplete="off">
+    </div>
+    <div class="login-group">
+        <input type="Password" ng-model="password"
+               class="form-control password" ng-enter="authenticateUser()" placeholder="Password" autocomplete="off">
+    </div>
+    <div class="login-group login-btn">
+        <button id="login" type="button" class="btn btn-primary" ng-click="authenticateUser()">
+            <span class="btn-text">Login</span>
+        </button>
+    </div>
+    <br class="clear">
+</div>
