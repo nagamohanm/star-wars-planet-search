@@ -55,10 +55,10 @@
                                 return false;
                             });
                             if(validated) {
-                                growl.success("Success");
+                                growl.success("You are now logged in.");
                                 $state.go('user');
                             } else {
-                                growl.error("Failure");
+                                growl.error("Invalid Username. Please check!");
                             }
                         } else {
                             var user = users[0];
@@ -66,7 +66,7 @@
                             $window.localStorage['loggedInUser'] = JSON.stringify(loggedInUser);
                             $window.localStorage['counter'] = 15;
                             if (user.birth_year === $scope.password && user.name.toLowerCase() === $scope.username.toLowerCase()) {
-                                growl.success("Success");
+                                growl.success("You are now logged in.");
                                 $state.go('user');
                             }
                         }
