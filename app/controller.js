@@ -39,7 +39,10 @@
 
             $scope.authenticateUser = function () {
                 var users = [];
-                user.login($scope.username).then(function (response) {
+                if($scope.username === "" || $scope.password === "") {
+                    growl.error("Please enter valid username and password!");
+                } else {
+                    user.login($scope.username).then(function (response) {
                     if(response.results.length === 0) {
                         growl.error("Invalid Username. Please check!");
                     } else {
@@ -72,6 +75,7 @@
                         }
                     }
                 });
+                }
             };
 
             $scope.logout = function () {
