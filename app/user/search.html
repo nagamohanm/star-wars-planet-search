@@ -1,17 +1,40 @@
-<div class="container">
-    <input type="text" ng-model="planetName" ng-change="getPlanets()" placeholder="Type Planet Name..." class="form-control">
-    <div ng-if="!planetsFound">
-        <i class="glyphicon glyphicon-remove"></i> No Results
+<div class="header">
+    <div class="col-md-3">
+        <div class="col-md-12 logo">
+            <a ui-sref="user" class="logo pull-left"><img src="app/images/logo.png" height="30" alt="Star Wars"></a>
+        </div>
     </div>
-    <div class="planets" ng-repeat="planet in planets track by $index">
-        <h4>{{planet.name}}</h4>
-
+    <div class="col-md-6">
+        &nbsp;
+    </div>
+    <div class="col-md-3">
+        <div class="col-md-12 logout">
+            <a href="javascript:void(0);" ng-click="logout()">Logout</a>
+        </div>
+    </div>
+</div>
+<br class="clear">
+<div class="container">
+    <input type="text" ng-model="planetName" ng-change="getPlanets()" placeholder="Type Planet Name..." class="form-control search">
+    <div ng-if="!planetsFound" class="no-results">
+        <span>No Results</span>
+    </div>
+    <div class="row planets" ng-if="planetsFound">
+        <div class="plr-5" ng-class="{'col-md-3': planet.smallPlanet, 'col-md-4': planet.mediumPlanet, 'col-md-6': planet.largePlanet}" ng-repeat="planet in planets track by $index">
+            <div class="col-md-12 planet-card">
+                <p><strong>Name: </strong>{{planet.name}}</p>
+                <p><strong>Pop: </strong>{{planet.population}}</p>
+                <p><strong>Climate: </strong>{{planet.climate}}</p>
+                <p><strong>Terrain: </strong>{{planet.terrain}}</p>
+            </div>
+        </div>
+        <div class="clear"></div>
     </div>
     <div class="paginations">
-        <button id="login" type="button" class="btn btn-default" ng-click="getMorePlanets('previous')" ng-disabled="previousPage == ''">
+        <button type="button" class="btn btn-default" ng-click="getMorePlanets('previous')" ng-disabled="previousPage == ''">
             <span class="btn-text">Prev</span>
         </button>
-        <button id="login" type="button" class="btn btn-primary" ng-click="getMorePlanets('next')" ng-disabled="nextPage == ''">
+        <button type="button" class="btn btn-primary" ng-click="getMorePlanets('next')" ng-disabled="nextPage == ''">
             <span class="btn-text">Next</span>
         </button>
     </div>

@@ -22,9 +22,8 @@
         };
 
         self.logout = function () {
-            $window.localStorage.removeItem('sessionToken');
-            $window.localStorage.removeItem('dataForLocalUsage');
             $window.localStorage.removeItem('loggedInUser');
+            $window.localStorage.removeItem('counter');
             $window.location.reload();
         };
 

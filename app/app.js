@@ -2,10 +2,10 @@
     'use strict';
 
     // Declare app level module which depends on views, and components
-    var app = angular.module('starWarsPlanetarySearch', ['ui.router', 'angular-growl', 'ng-enter']);
+    var app = angular.module('starWarsPlanetarySearch', ['ui.router', 'ui.router.state.events', 'angular-growl', 'ng-enter']);
 
     app.config(['growlProvider', function (growlProvider) {
-        growlProvider.globalPosition('top-right');
+        growlProvider.globalPosition('bottom-left');
         growlProvider.globalDisableIcons(true);
         growlProvider.globalTimeToLive(5000);
     }]);
@@ -13,10 +13,7 @@
     app.constant("SWAPI", "https://swapi.co/api");
 
     app.value('loggedInUser', {
-        id: "",
-        _id: "",
-        profileName: "",
-        loggedIn: false
+        profileName: ""
     });
 
     app.constant("_", window._);
@@ -26,16 +23,9 @@
         $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
             if (!auth.isAuthed() && toState.name.indexOf('public')) {
                 event.preventDefault();
-                $state.go('public.login');
-                growl.warning("Please login with an authorized account to access this page")
+                $state.transitionTo('public.login');
             }
             if (auth.isAuthed()) {
-                loggedInUser.id = auth.returnId();
-                loggedInUser._id = auth.returnId();
-                loggedInUser.profileName = auth.returnName();
-                loggedInUser.loggedIn = true;
-
-
                 if (!toState.name.indexOf('public.login')) {
                     event.preventDefault();
                     growl.info("You are logged in");
