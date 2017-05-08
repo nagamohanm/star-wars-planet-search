@@ -56,6 +56,9 @@ two new folders in your project.
 * `node_modules` - contains the npm packages for the tools we need
 * `bower_components` - contains the Angular framework files
 
+### Run the Application
+
+Once the application is open in an IDE like WebStorm, Right-Click on `index.html` and either select `Run index.html` or `Open in` and choose one of the installed browser.
 
 ## Links
 
