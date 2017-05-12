@@ -168,6 +168,7 @@ input.search {
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     margin: 0 0 10px;
     padding: 5px;
+    height: 150px;
     min-height: 150px;
     max-height: 200px;
     overflow-y: auto;
