@@ -10,8 +10,8 @@
     app.config(["$stateProvider", "$urlRouterProvider", function ($stateProvider, $urlRouterProvider) {
 
         /* Get the root view path */
-        var loginViewPath = "/star-wars-planet-search/app/auth/";
-        var userViewPath = "/star-wars-planet-search/app/user/";
+        var loginViewPath = "/auth/";
+        var userViewPath = "/user/";
 
         $urlRouterProvider.otherwise("/public/login");
 
